@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Go Template",
+	"patterns": [
+		{
+			"include": "#blocks"
+		}
+	],
+	"repository": {
+		"blocks": {
+			"match": "({{-?)([^}]*?)(-?}})",
+			"captures": {
+				"1": {
+					"name": "constant.language.gotexttemplate"
+				},
+				"3": {
+					"name": "constant.language.gotexttemplate"
+				},
+				"2": {
+					"patterns": [
+						{
+							"name": "keyword.control.gotexttemplate",
+							"match": "\\b(define|if|range|end|template|block|with|else)\\b"
+						},
+						{
+							"name": "string.quoted.double.gotexttemplate",
+							"match": "\".*\""
+						},
+						{
+							"name": "variable.parameter.gotexttemplate",
+							"match": "(\\.[\\w_]*|\\$[\\w_]+)"
+						},
+						{
+							"name": "keyword.control.gotexttemplate",
+							"match": "\\b(and|call|html|index|slice|js|len|not|or|print|printf|println|urlquery)\\b"
+						},
+						{
+							"name": "keyword.operator.gotexttemplate",
+							"match": "\\b(eq|ne|lt|le|gt|ge|:=|=|\\|)\\b"
+						}
+					]
+				}
+			}
+		}
+	},
+	"scopeName": "source.gotexttemplate"
+}

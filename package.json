@@ -1,0 +1,37 @@
+{
+    "name": "vscode-gotexttemplate",
+    "displayName": "Go Text/Template",
+    "description": "Syntax highlighting for Go text/template syntax",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "url": "https://github.com/necrophonic/vscode-gotexttemplate"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "gotexttemplate",
+                "aliases": [
+                    "Go Text/Template",
+                    "gotexttemplate"
+                ],
+                "extensions": [
+                    ".tmpl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gotexttemplate",
+                "scopeName": "source.gotexttemplate",
+                "path": "./syntaxes/gotexttemplate.tmLanguage.json"
+            }
+        ]
+    }
+}
